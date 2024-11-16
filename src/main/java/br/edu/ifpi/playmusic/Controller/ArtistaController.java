@@ -1,4 +1,4 @@
-package br.edu.ifpi.musicas.Controller;
+package br.edu.ifpi.playmusic.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifpi.musicas.Model.Artista;
-import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
+import br.edu.ifpi.playmusic.Model.Artista;
+import br.edu.ifpi.playmusic.Repostitory.ArtistaRepository;
 import jakarta.validation.Valid;
 
 @RestController

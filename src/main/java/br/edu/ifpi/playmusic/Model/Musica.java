@@ -1,30 +1,36 @@
-package br.edu.ifpi.musicas.Model;
+package br.edu.ifpi.playmusic.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "artistas")
-public class Artista {
-
+@Table(name = "musicas")
+public class Musica {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotNull(message = "Nome não pode ser nulo.")
-  @NotEmpty(message = "Nome não pode vazio.")
+  @NotNull
+  @NotEmpty
   private String nome;
-  @NotNull
-  @NotEmpty
-  private String email;
-  @NotNull
-  @NotEmpty
-  private String senha;
+  @ManyToOne
+  @JoinColumn(name = "artista_id", nullable = false)
+  private Artista artista;
+
+  public Musica() {
+  }
+
+  public Musica(String nome, Artista artista) {
+    this.nome = nome;
+    this.artista = artista;
+  }
 
   public Long getId() {
     return id;
@@ -42,20 +48,12 @@ public class Artista {
     this.nome = nome;
   }
 
-  public String getEmail() {
-    return email;
+  public Artista getArtista() {
+    return artista;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getSenha() {
-    return senha;
-  }
-
-  public void setSenha(String senha) {
-    this.senha = senha;
+  public void setArtista(Artista artista) {
+    this.artista = artista;
   }
 
 }

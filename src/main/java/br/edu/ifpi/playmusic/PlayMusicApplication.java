@@ -1,13 +1,13 @@
-package br.edu.ifpi.musicas;
+package br.edu.ifpi.playmusic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MusicasApplication {
+public class PlayMusicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MusicasApplication.class, args);
+		SpringApplication.run(PlayMusicApplication.class, args);
 	}
 
 }

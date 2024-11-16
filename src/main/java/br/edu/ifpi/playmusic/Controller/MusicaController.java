@@ -1,4 +1,4 @@
-package br.edu.ifpi.musicas.Controller;
+package br.edu.ifpi.playmusic.Controller;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifpi.musicas.DTO.MusicaInputDTO;
-import br.edu.ifpi.musicas.Model.Musica;
-import br.edu.ifpi.musicas.Repostitory.MusicaRepository;
-import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
+import br.edu.ifpi.playmusic.DTO.MusicaInputDTO;
+import br.edu.ifpi.playmusic.Model.Musica;
+import br.edu.ifpi.playmusic.Repostitory.ArtistaRepository;
+import br.edu.ifpi.playmusic.Repostitory.MusicaRepository;
 
 @RestController
 @RequestMapping("/musicas")

@@ -1,10 +1,10 @@
-package br.edu.ifpi.musicas.DTO;
+package br.edu.ifpi.playmusic.DTO;
 
 import java.util.Optional;
 
-import br.edu.ifpi.musicas.Model.Musica;
-import br.edu.ifpi.musicas.Model.Artista;
-import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
+import br.edu.ifpi.playmusic.Model.Artista;
+import br.edu.ifpi.playmusic.Model.Musica;
+import br.edu.ifpi.playmusic.Repostitory.ArtistaRepository;
 
 public class MusicaInputDTO {
   private String nome;
