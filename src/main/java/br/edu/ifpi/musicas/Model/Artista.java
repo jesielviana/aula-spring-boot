@@ -9,8 +9,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "usuarios")
-public class Usuario {
+@Table(name = "artistas")
+public class Artista {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

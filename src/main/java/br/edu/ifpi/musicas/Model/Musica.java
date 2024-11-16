@@ -21,15 +21,15 @@ public class Musica {
   @NotEmpty
   private String nome;
   @ManyToOne
-  @JoinColumn(name = "usuario_id", nullable = false)
-  private Usuario usuario;
+  @JoinColumn(name = "artista_id", nullable = false)
+  private Artista artista;
 
   public Musica() {
   }
 
-  public Musica(String nome, Usuario usuario) {
+  public Musica(String nome, Artista artista) {
     this.nome = nome;
-    this.usuario = usuario;
+    this.artista = artista;
   }
 
   public Long getId() {
@@ -48,12 +48,12 @@ public class Musica {
     this.nome = nome;
   }
 
-  public Usuario getUsuario() {
-    return usuario;
+  public Artista getArtista() {
+    return artista;
   }
 
-  public void setUsuario(Usuario usuario) {
-    this.usuario = usuario;
+  public void setArtista(Artista artista) {
+    this.artista = artista;
   }
 
 }

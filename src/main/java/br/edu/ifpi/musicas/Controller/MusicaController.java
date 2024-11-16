@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifpi.musicas.DTO.MusicaInputDTO;
 import br.edu.ifpi.musicas.Model.Musica;
 import br.edu.ifpi.musicas.Repostitory.MusicaRepository;
-import br.edu.ifpi.musicas.Repostitory.UsuarioRepository;
+import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
 
 @RestController
 @RequestMapping("/musicas")
@@ -22,7 +22,7 @@ public class MusicaController {
   @Autowired
   private MusicaRepository musicaRepository;
   @Autowired
-  private UsuarioRepository usuarioRepository;
+  private ArtistaRepository artistaRepository;
 
   @GetMapping
   public List<Musica> get() {
@@ -31,7 +31,7 @@ public class MusicaController {
 
   @PostMapping
   public ResponseEntity<Musica> add(@RequestBody MusicaInputDTO dto) {
-    Musica musica = dto.converte(usuarioRepository);
+    Musica musica = dto.converte(artistaRepository);
     musicaRepository.save(musica);
     return ResponseEntity.status(201).body(musica);
   }

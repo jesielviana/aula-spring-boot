@@ -13,28 +13,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifpi.musicas.Model.Usuario;
-import br.edu.ifpi.musicas.Repostitory.UsuarioRepository;
+import br.edu.ifpi.musicas.Model.Artista;
+import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/usuarios")
-public class UsuarioController {
+@RequestMapping("/artistas")
+public class ArtistaController {
 
   @Autowired
-  private UsuarioRepository usuarioRepository;
+  private ArtistaRepository artistaRepository;
 
   @GetMapping
-  public List<Usuario> get(@RequestParam(required = false) String nome) {
+  public List<Artista> get(@RequestParam(required = false) String nome) {
     if (nome == null) {
-      return usuarioRepository.findAll();
+      return artistaRepository.findAll();
     }
-    return usuarioRepository.findByNome(nome);
+    return artistaRepository.findByNome(nome);
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Usuario> getById(@PathVariable long id) {
-    Optional<Usuario> optional = usuarioRepository.findById(id);
+  public ResponseEntity<Artista> getById(@PathVariable long id) {
+    Optional<Artista> optional = artistaRepository.findById(id);
     if (optional.isPresent()) {
       return ResponseEntity.ok().body(optional.get());
     }
@@ -43,9 +43,9 @@ public class UsuarioController {
   }
 
   @PostMapping
-  public ResponseEntity<Usuario> add(@RequestBody @Valid Usuario usuario) {
-    usuarioRepository.save(usuario);
-    return ResponseEntity.status(201).body(usuario);
+  public ResponseEntity<Artista> add(@RequestBody @Valid Artista artista) {
+    artistaRepository.save(artista);
+    return ResponseEntity.status(201).body(artista);
   }
 
 }

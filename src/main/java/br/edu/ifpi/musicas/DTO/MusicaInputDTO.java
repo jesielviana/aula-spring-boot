@@ -3,20 +3,20 @@ package br.edu.ifpi.musicas.DTO;
 import java.util.Optional;
 
 import br.edu.ifpi.musicas.Model.Musica;
-import br.edu.ifpi.musicas.Model.Usuario;
-import br.edu.ifpi.musicas.Repostitory.UsuarioRepository;
+import br.edu.ifpi.musicas.Model.Artista;
+import br.edu.ifpi.musicas.Repostitory.ArtistaRepository;
 
 public class MusicaInputDTO {
   private String nome;
-  private long idUsuario;
+  private long idArtista;
 
-  public MusicaInputDTO(long idUsuario, String nome) {
-    this.idUsuario = idUsuario;
+  public MusicaInputDTO(long idArtista, String nome) {
+    this.idArtista = idArtista;
     this.nome = nome;
   }
 
-  public Musica converte(UsuarioRepository usuarioRepository) {
-    Optional<Usuario> optional = usuarioRepository.findById(this.idUsuario);
+  public Musica converte(ArtistaRepository artistaRepository) {
+    Optional<Artista> optional = artistaRepository.findById(this.idArtista);
     if (optional.isPresent()) {
       return new Musica(nome, optional.get());
     }
@@ -31,12 +31,12 @@ public class MusicaInputDTO {
         this.nome = nome;
     }
 
-    public long getIdUsuario() {
-        return idUsuario;
+    public long getIdArtista() {
+        return idArtista;
     }
 
-    public void setIdUsuario(long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdArtista(long idArtista) {
+        this.idArtista = idArtista;
     }
 
 
